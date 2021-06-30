@@ -1,0 +1,22 @@
+@import "../../../utils/utils";
+
+.question-flag__container {
+  img {
+    filter: brightness(0.85);
+  }
+}
+
+@media (max-width: 1000px) {
+  .question-flag__container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1001px) {
+  .question-flag__container {
+    img {
+      height: 300px;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+$primary-900: #080808;
+$primary-800: #121212;
+$primary-700: #1c1c1c;
+$primary-600: #262626;
+$primary-500: #2f2f2f;
+$primary-400: #393939;
+$primary-300: #434343;
+$primary-200: #4d4d4d;
+$primary-100: #575757;
+
+$secondary-400: #e0e0e0;
+$secondary-300: #eaeaea;
+$secondary-200: #f4f4f4;
+$secondary-100: #fdfdfd;
+
+$accent: #03fc80;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  & > * {
+    margin: 30px 0;
+  }
+}
+
+.button {
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+
+.button--basic {
+  min-width: 200px;
+  min-height: 35px;
+  background-color: $accent;
+  font-size: 1.1em;
+  margin: 0 20px;
+  padding: 8px 30px;
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+
+.game__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 20px;
+  margin: 20px 0;
+}
+
+.button--answer {
+  min-width: 200px;
+  min-height: 35px;
+  font-size: 1em;
+  padding: 8px 30px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid $accent;
+  &:hover {
+    background-color: $accent;
+    color: black;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../../../utils/utils";
+
+.question-flag__container {
+  img {
+    height: 300px;
+    width: auto;
+    filter: brightness(0.8);
+  }
+}

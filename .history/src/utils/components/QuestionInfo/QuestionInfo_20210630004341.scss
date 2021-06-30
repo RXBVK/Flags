@@ -1,0 +1,10 @@
+@import "../../utils";
+
+.answer__result__flag {
+  width: 30%;
+}
+.answer__result__info__line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+}
