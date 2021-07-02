@@ -1,0 +1,37 @@
+@import "../../utils";
+
+.choose-region__container {
+  .choose-region__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .choose-region__single-region {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h4 {
+        font-size: 28px;
+      }
+      .single-region__checkbox-container {
+        position: relative;
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-50%, -50%);
+          height: 60px;
+          width: 60px;
+          background-color: transparent;
+          border: 3px solid $accent;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../utils";
+
+.choose-region__container {
+  .choose-region__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    .choose-region__single-region {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h4 {
+        font-size: 28px;
+      }
+      .single-region__checkbox-container {
+        position: relative;
+        cursor: pointer;
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        span {
+          position: absolute;
+          top: 20px;
+          left: 0;
+          transform: translate(-50%, -50%);
+          height: 60px;
+          width: 60px;
+          border: 3px solid $accent;
+          border-radius: 15px;
+        }
+        input:checked ~ span {
+          background-color: $accent;
+        }
+      }
+    }
+  }
+}

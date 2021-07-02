@@ -1,0 +1,18 @@
+@import "../../utils";
+
+.choose-region__container {
+  .choose-region__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .choose-region__single-region {
+      h4 {
+        font-size: 28px;
+      }
+      input {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}

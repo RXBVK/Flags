@@ -1,0 +1,9 @@
+@import "../../utils";
+
+.choose-region__container {
+  .choose-region__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: auto;
+  }
+}

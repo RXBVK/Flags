@@ -1,0 +1,6 @@
+@import "../../utils";
+
+.choose-region__container {
+  display: grid;
+  grid-template-columns: (3, 1fr);
+}
