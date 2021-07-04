@@ -2,6 +2,7 @@ import Navigation from "./components/Navigation/Navigation";
 import { HashRouter as Router } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AppContext } from "./utils/context";
+import Loader from "./utils/components/Loader/Loader";
 
 function App() {
   const [allCountries, setAllCountries] = useState([]);
@@ -22,7 +23,7 @@ function App() {
           {allCountries.length > 0 ? (
             <Navigation allCountries={allCountries} />
           ) : (
-            <h1>Loading...</h1>
+            <Loader />
           )}
         </AppContext.Provider>
       </Router>

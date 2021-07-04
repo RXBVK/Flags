@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Divider from "../../utils/Divider";
 import Home from "../Home/Home";
 import FlagToCountry from "../Games/FlagToCountry/FlagToCountry";
+import Settings from "../Settings/Settings";
 import "./Navigation.css";
 
 export default function Navigation(props) {
@@ -20,7 +21,9 @@ export default function Navigation(props) {
             <FontAwesomeIcon icon={faHome} />
           </NavLink>
         </div>
-        <FontAwesomeIcon icon={faSlidersH} />
+        <NavLink exact to="/settings">
+          <FontAwesomeIcon icon={faSlidersH} />
+        </NavLink>
       </div>
       <Switch>
         <Route exact path="/">
@@ -28,6 +31,9 @@ export default function Navigation(props) {
         </Route>
         <Route exact path="/country-to-flag">
           <FlagToCountry allCountries={props.allCountries} />
+        </Route>
+        <Route exact path="/settings">
+          <Settings />
         </Route>
         {/* <Route>
                         <NotFound />

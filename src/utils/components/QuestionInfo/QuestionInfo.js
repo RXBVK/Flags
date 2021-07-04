@@ -41,7 +41,7 @@ export default function QuestionInfo({
           className="answer__result__flag"
         />
         <h2 className="answer__result__info__header">
-          {country.name} ({country.cioc})
+          {country.name} {country.cioc ? `(${country.cioc})` : ""}
         </h2>
         <div className="answer__result__info">
           <div className="answer__result__info__line">

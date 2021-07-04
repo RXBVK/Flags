@@ -4,7 +4,7 @@ import "../../components/GameFinished/GameFinished.css";
 export default function GameFinished(props) {
   return (
     <div className="game-finished__container">
-      <h1>{props.result ? "Congratulations!" : "Unfortunately :("}</h1>
+      <h1>{props.result ? "Congratulations!" : "Quiz Failed"}</h1>
       <p>
         {props.result
           ? "You successfully finished the game!"

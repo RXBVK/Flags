@@ -45,7 +45,6 @@ export default function FlagToCountry({ allCountries }) {
     setAnswers(shuffleArray(answers));
 
     let temp = [...availableCountries];
-    console.log(temp);
     temp.splice(randomCountry, 1);
     setAvailableCountries(temp);
   };
@@ -68,9 +67,7 @@ export default function FlagToCountry({ allCountries }) {
             countryFilter.includes(country.region)
           )
         : [...allCountries];
-    console.log(arr);
     setAvailableCountries(arr);
-    console.log(availableCountries);
     setMaxScore(arr.length);
   };
 
