@@ -54,10 +54,16 @@ export default function FlagToCountry({ allCountries }) {
     let answerWasGood = answer === drawnCountry.name;
     if (answerWasGood) setScore(score + 1);
     setGoodAnswer(answerWasGood);
+    if (localStorage.getItem("Speedrun_Mode"))
+      availableCountries.length === 0 || !answerWasGood
+        ? finishTheGame(answerWasGood)
+        : getQuestion();
   };
 
-  const finishTheGame = () => {
-    goodAnswer === false ? setGameResult(false) : setGameResult(true);
+  const finishTheGame = (ans) => {
+    ans === false || goodAnswer === false
+      ? setGameResult(false)
+      : setGameResult(true);
   };
 
   const filterCountries = () => {
@@ -107,7 +113,7 @@ export default function FlagToCountry({ allCountries }) {
     );
   }
 
-  if (goodAnswer !== null) {
+  if (goodAnswer !== null && !localStorage.getItem("Speedrun_Mode")) {
     return (
       <div className="container">
         <QuestionInfo
