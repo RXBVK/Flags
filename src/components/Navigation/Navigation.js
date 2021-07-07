@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import { faHome, faSlidersH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,9 +9,16 @@ import Settings from "../Settings/Settings";
 import "./Navigation.css";
 
 export default function Navigation(props) {
+  const [navOpened, setNavOpened] = useState(false);
   return (
     <>
-      <div className="navigation">
+      <div className={`navigation ${navOpened ? "navigation-opened" : ""}`}>
+        <div
+          className="navigation__toggle"
+          onClick={() => setNavOpened(!navOpened)}
+        >
+          {navOpened ? "<" : ">"}
+        </div>
         <header>
           <h1 className="navigation__logo">Flags</h1>
         </header>

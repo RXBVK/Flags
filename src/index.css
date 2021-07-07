@@ -108,6 +108,14 @@
   }
 }
 
+::-moz-selection {
+  background-color: rgba(3, 252, 128, 0.7);
+}
+
+::selection {
+  background-color: rgba(3, 252, 128, 0.7);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -181,6 +189,9 @@
 }
 
 @media (min-width: 1001px) {
+  .container {
+    padding-left: 150px;
+  }
   .container > * {
     margin: 30px 0;
   }
