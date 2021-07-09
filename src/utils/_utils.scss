@@ -71,6 +71,7 @@ $accent: #03fc80;
 }
 
 .game__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
