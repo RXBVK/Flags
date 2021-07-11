@@ -7,6 +7,7 @@
   border: 3px solid $accent;
   border-radius: 15px;
   padding: 50px;
+  animation: fadein 800ms;
   & > * {
     margin: 20px 0;
   }

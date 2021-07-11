@@ -1,5 +1,6 @@
 @import "../../utils";
 .answer__result {
+  animation: fadein 400ms;
   border-radius: 15px;
   display: flex;
   flex-direction: column;

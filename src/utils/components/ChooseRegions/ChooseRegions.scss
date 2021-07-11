@@ -1,6 +1,7 @@
 @import "../../utils";
 
 .choose-region__container {
+  animation: fadein 800ms;
   .choose-region__form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
