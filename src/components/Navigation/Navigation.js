@@ -6,6 +6,7 @@ import Divider from "../../utils/Divider";
 import Home from "../Home/Home";
 import FlagToCountry from "../Games/FlagToCountry/FlagToCountry";
 import Settings from "../Settings/Settings";
+import ChooseRegions from "../../utils/components/ChooseRegions/ChooseRegions";
 import "./Navigation.css";
 
 export default function Navigation(props) {
@@ -41,6 +42,9 @@ export default function Navigation(props) {
         </Route>
         <Route exact path="/settings">
           <Settings />
+        </Route>
+        <Route exact path="/settings/regions">
+          <ChooseRegions />
         </Route>
         {/* <Route>
                         <NotFound />

@@ -4,8 +4,6 @@
   animation: fadein 800ms;
   .choose-region__form {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
     .choose-region__single-region {
       display: flex;
       flex-direction: column;
@@ -18,5 +16,18 @@
   }
   .button--confirm-region {
     margin-top: 120px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .choose-region__form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1001px) {
+  .choose-region__form {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
   }
 }

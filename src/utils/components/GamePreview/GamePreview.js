@@ -10,14 +10,6 @@ export default function GamePreview(props) {
       >
         Start the game
       </button>
-      <button
-        className="button button--basic"
-        onClick={() => props.setShowRegionOptions(true)}
-        style={{ filter: "brightness(.2)", color: "black", margin: "30px 0" }}
-        disabled
-      >
-        Change regions
-      </button>
     </>
   );
 }

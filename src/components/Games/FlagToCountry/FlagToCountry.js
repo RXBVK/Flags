@@ -3,7 +3,6 @@ import FlagToCountryField from "./FlagToCountryField";
 import { shuffleArray, getAnswers } from "../../../utils/utils";
 import QuestionInfo from "../../../utils/components/QuestionInfo/QuestionInfo";
 import GameFinished from "../../../utils/components/GameFinished/GameFinished";
-import ChooseRegions from "../../../utils/components/ChooseRegions/ChooseRegions";
 import GamePreview from "../../../utils/components/GamePreview/GamePreview";
 import "./FlagToCountry.css";
 
@@ -17,14 +16,12 @@ export default function FlagToCountry({ allCountries }) {
   const [goodAnswer, setGoodAnswer] = useState(null);
   const [gameResult, setGameResult] = useState(null);
   const [gameTime, setGameTime] = useState(0);
-  const [countryFilter, setCountryFilter] = useState([]);
-  const [showRegionOptions, setShowRegionOptions] = useState(false);
 
   useEffect(() => {
     filterCountries();
   }, []);
 
-  const startTheGame = () => {
+  const startTheGame = async () => {
     setScore(0);
     setGameResult(null);
     setGameStarted(true);
@@ -64,40 +61,18 @@ export default function FlagToCountry({ allCountries }) {
     ans === false || goodAnswer === false
       ? setGameResult(false)
       : setGameResult(true);
+    filterCountries();
   };
 
   const filterCountries = () => {
+    let filter = localStorage.getItem("Country_Filter")?.split(",") || [];
     let arr =
-      countryFilter.length > 0
-        ? [...allCountries].filter((country) =>
-            countryFilter.includes(country.region)
-          )
+      filter.length > 0
+        ? [...allCountries].filter((country) => filter.includes(country.region))
         : [...allCountries];
     setAvailableCountries(arr);
     setMaxScore(arr.length);
   };
-
-  const handleFilterCountries = (value, checked) => {
-    let tempFiltered = [...countryFilter];
-    if (checked) {
-      tempFiltered.push(value);
-    } else {
-      let i = tempFiltered.indexOf(value);
-      tempFiltered.splice(i, 1);
-    }
-    setCountryFilter(tempFiltered);
-  };
-
-  if (showRegionOptions) {
-    return (
-      <div className="container">
-        <ChooseRegions
-          handleFilterCountries={handleFilterCountries}
-          setShowRegionOptions={setShowRegionOptions}
-        />
-      </div>
-    );
-  }
 
   if (gameResult !== null) {
     return (
@@ -133,10 +108,7 @@ export default function FlagToCountry({ allCountries }) {
   return (
     <div className="container">
       {!gameStarted ? (
-        <GamePreview
-          startTheGame={startTheGame}
-          setShowRegionOptions={setShowRegionOptions}
-        />
+        <GamePreview startTheGame={startTheGame} />
       ) : (
         <FlagToCountryField
           drawnCountry={drawnCountry}

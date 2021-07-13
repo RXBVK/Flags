@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Settings() {
+  let history = useHistory();
   const [speedrunMode, setSpeedrunMode] = useState(
     localStorage.getItem("Speedrun_Mode")
   );
@@ -27,6 +29,13 @@ export default function Settings() {
             />
             <span className="checkbox-custom"></span>
           </label>
+          <button
+            className="button button--answer"
+            style={{ marginTop: "30px" }}
+            onClick={() => history.push("/settings/regions")}
+          >
+            Region settings
+          </button>
         </div>
       </div>
     </div>
