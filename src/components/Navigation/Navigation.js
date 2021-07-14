@@ -25,8 +25,8 @@ export default function Navigation(props) {
         </header>
         <Divider width={60} height={3} />
         <div className="navigation__menu">
-          <NavLink exact to="/">
-            <FontAwesomeIcon icon={faHome} aria-label="Home" />
+          <NavLink exact to="/" aria-label="Home">
+            <FontAwesomeIcon icon={faHome} />
           </NavLink>
         </div>
         <NavLink exact to="/settings" aria-label="Settings">
