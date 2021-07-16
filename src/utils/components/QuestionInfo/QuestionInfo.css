@@ -273,7 +273,6 @@
 }
 
 .button--continue {
-  position: absolute;
   background-color: #03fc80;
   border: 1px solid #03fc80;
   border-radius: 50%;
@@ -314,8 +313,10 @@
     height: 20px;
   }
   .button--continue {
-    right: 20px;
-    top: 20px;
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: -20px;
+    margin-bottom: 15px;
   }
 }
 
@@ -333,6 +334,7 @@
     height: 40px;
   }
   .button--continue {
+    position: absolute;
     right: 20px;
     top: 20px;
   }
@@ -348,6 +350,7 @@
     margin: 20px 0;
   }
   .button--continue {
+    position: absolute;
     right: 10%;
     top: 50%;
     -webkit-transform: translateY(-50%);
